@@ -1,0 +1,2354 @@
+<!doctype html>
+<html lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <title>ELA Add Entity</title>
+        <!--favicon-->
+        <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png" />
+        <!--Font Awesome css-->
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <!--bootstrap css-->
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <link rel="stylesheet" type="text/css" href="assets/css/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        <!--main css-->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+         
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.64/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    </head>
+    <body>
+
+
+        <!-- ELA Top middle section icons start -->
+        <div class="ela__actionTopMid_icons">
+            <div class="ela__actionPanel">
+                <span class="unclassified-tag">Unclassified</span>
+                <ul>
+                    <li><a href="#" class="bookmarks-icon"><img src="assets/images/nav-icon/bookmarks-icon.png" /></a></li>
+                    <li><a href="#" class="dil-icon"><img src="assets/images/nav-icon/dil-icon.png" /></a></li>
+                    <li><a href="#" class="alert-icon"><img src="assets/images/nav-icon/alert-icon.png" /></a></li>
+                    <li><a href="#" class="translator-icon"><img src="assets/images/nav-icon/translator-icon.png" /></a></li>
+                    <li><a href="#" class="liveFeed_toggle live-feed-icon"><img src="assets/images/nav-icon/live-feed.png" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- ELA Top middle section icons end -->
+
+
+        <!-- ELA Live Feed wrapper Start -->
+        <div class="ela__liveFeed_wrapper">
+            <div class="ela__liveFeed_panel">
+                <a class="closeBtn" href=""><img src="assets/images/nav-icon/close-icon.png" /></a>
+
+                <div class="liveFeedTab-container">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a data-toggle="tab" href="#feed">Feed</a></li>
+                      <li><a data-toggle="tab" href="#twitterFeed">Twitter</a></li>
+                      <li><a data-toggle="tab" href="#newitemsFeed">New Items</a></li>
+                      <li><a data-toggle="tab" href="#rssFeed">RSS</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="feed" class="tab-pane fade in active">
+                        <h3>Feed</h3>
+                      </div>
+                      <div id="twitterFeed" class="tab-pane fade">
+                        <h3>Twitter</h3>
+                      </div>
+                      <div id="newitemsFeed" class="tab-pane fade">
+                        <h3>New Items</h3>
+                      </div>
+                    </div>
+                    <div id="rssFeed" class="tab-pane fade">
+                        <h3>RSS</h3>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ELA Live Feed wrapper End -->
+
+
+
+        <!-- Sidebar Navigation Start -->
+        <div class="ela__sidebarNav_wrap">
+
+            <!-- Sidebar Icon Column Start -->
+            <div class="ela__sidebarIcon-panel">
+                <ul class="ela__iconLink">
+                    <li class="ela__logo"><img src="assets/images/ela-logo.png" /></li>
+                    <li class="ela_home_icon"><a href="#" class="panel_home"><img src="assets/images/nav-icon/home-icon.png" /></a></li>
+                    <li><a href="#" class="panel_casemanager"><img src="assets/images/nav-icon/case-manager-icon.png" /></a></li>
+                    <li><a href="#" class="panel_add_entity"><img src="assets/images/nav-icon/add-entity-icon.png" /></a></li>
+                    <li><a href="#" class="panel_tactical_graphics"><img src="assets/images/nav-icon/tactical-graphics-icon.png" /></a></li>
+                    <li><a href="#" class="panel_kmlupload"><img src="assets/images/nav-icon/kml-upload-icon.png" /></a></li>
+                    <li><a href="#" class="panel_layer"><img src="assets/images/nav-icon/layer-icon.png" /></a></li>
+                    <li><a href="#" class="panel_relationshio_onoff"><img src="assets/images/nav-icon/relationship-on-off-icon.png" /></a></li>
+                    <li><a href="#" class="panel_search"><img src="assets/images/nav-icon/search-icon.png" /></a></li>
+                    <li><a href="#" class="panel_nai"><img src="assets/images/nav-icon/nai-icon.png" /></a></li>
+                    <li><a href="#" class="panel_import_export"><img src="assets/images/nav-icon/import-export-icon.png" /></a></li>
+                    <li><a href="#" class="panel_ppt_export"><img src="assets/images/nav-icon/ppt-export-icon.png" /></a></li>
+                    <li><a href="#" class="panel_drone"><img src="assets/images/nav-icon/drone-data-icon.png" /></a></li>
+                    <li><a href="#" class="panel_help"><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                    <li><a href="#" class="panel_rules"><img src="assets/images/nav-icon/rules-measure-icon.png" /></a></li>
+                    <li><a href="#" class="panel_logout"><img src="assets/images/nav-icon/logout-icon.png" /></a></li>
+
+
+                    <!-- <li><a href="#" class="panel_relationship"><img src="assets/images/nav-icon/relationship-icon.png" /></a></li>
+                    <li><a href="#" class="panel_3dglobe"><img src="assets/images/nav-icon/3d-globe.png" /></a></li>
+                    <li><a href="#" class="panel_timeline"><img src="assets/images/nav-icon/timeline-icon.png" /></a></li>
+                    <li><a href="#" class="panel_facets"><img src="assets/images/nav-icon/facets-icon.png" /></a></li>
+                    <li><a href="#" class="panel_nigthmode"><img src="assets/images/nav-icon/night-mode-icon.png" /></a></li>
+                     -->
+                </ul>
+            </div>
+            <!-- Sidebar Icon Column End -->
+
+            <!-- Sidebar Flyout Container Start -->
+            <div id="ela_draggableDiv">
+                <div class="ela__sideNav_nav_flyout" style="display: none;">
+
+                    <!-- Flyout Close Button Start -->
+                    <div class="closeBtn-Div">
+                        <ul class="list-inline">
+                            <li><a class="closeBtn" href=""><img src="assets/images/nav-icon/close-icon.png" /></a></li>
+                            
+                        </ul>
+                    </div>
+                    <!-- Flyout Close Button End -->
+
+                    <!-- Panel  #ADD ENTITY Div Start -->
+                    <div id="panel_add_entity" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>ADD ENTITY</h2>
+                            <!-- Sidebar Filter Nav Start -->
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                    <li class="filter_nav">
+                                      <div class="dropdown">
+                                        <a href="" id="cash_filter_Option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/filter-icon.png" /></a>
+                                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cash_filter_Option">
+                                        <ul class="list-unstyled history-filterOption">
+                                            <li>History</li>
+                                            <li><input type="radio"> <label>30 Days</label></li>
+                                            <li><input type="radio"> <label>60 Days</label></li>
+                                            <li><input type="radio"> <label>90 Days</label></li>
+                                            <li><input type="radio"> <label>Custom: <input type="text" placeholder="YYYMMDD"> to <input type="text" placeholder="YYYMMDD"></label></li>
+                                            <li><a href="">Clear history</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    </li>
+                                </ul>
+                            </div> 
+                            <!-- Sidebar Filter Nav End -->
+                        </div>
+                        <!-- ADD ENTITY form container start -->
+                        <div class="ela__sidebarForm_section">
+
+                            <!-- Profile Thumbnails -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="ela__profile_thumbs">
+                                        <div class="ela_profile_pic ela__thumb_slider">
+                                            <div class="thumb_pic">
+                                                <a href="" class="change-pic-icon selectIconPop"></a>
+                                                <img src="assets/images/profile-thumb/profile-thumb01.jpg" />
+                                            </div>
+                                            <div class="thumb_pic">
+                                                <a href="" class="change-pic-icon selectIconPop"></a>
+                                                <img src="assets/images/profile-thumb/profile-thumb02.jpg" />
+                                            </div>
+                                            <div class="thumb_pic">
+                                                <a href="" class="change-pic-icon selectIconPop"></a>
+                                                <img src="assets/images/profile-thumb/profile-thumb03.jpg" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Row #1 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>Event Category</option>
+                                        <option>Option 01</option>
+                                        <option>Option 02</option>
+                                        <option>Option 03</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>Event Type</option>
+                                        <option>Option 01</option>
+                                        <option>Option 02</option>
+                                        <option>Option 03</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Form Row #2 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" name="" class="form-control mgrs_icon" placeholder="MGRS">
+                                </div>
+                            </div>
+                            <!-- Form Row #3 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" name="" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <!-- Form Row #4 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea class="form-control">Description</textarea>
+                                </div>
+                            </div>
+                            <!-- Form Row #5 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>Classification</option>
+                                        <option>Option 01</option>
+                                        <option>Option 02</option>
+                                        <option>Option 03</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>Confidence</option>
+                                        <option>Option 01</option>
+                                        <option>Option 02</option>
+                                        <option>Option 03</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Form Row #6 -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-control">
+                                        <option>Associated Case</option>
+                                        <option>Option 01</option>
+                                        <option>Option 02</option>
+                                        <option>Option 03</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="date" name="" class="form-control" placeholder="Date">
+                                </div>
+                            </div>
+
+                            <!-- Form Row #7 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-md btn-block btn-white">Save Entity</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-md btn-block btn-border">Clear Form</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-md btn-block btn-border">Go Back</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ADD ENTITY form container end -->
+                    </div>
+                    <!-- Panel  #ADD ENTITY Div End -->
+
+                    <!-- Panel  #Home Div Start -->
+                    <div id="panel_casemanager" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>DATA MANAGER</h2>
+                            <!-- Sidebar Filter Nav Start -->
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                    <li class="filter_nav">
+                                      <div class="dropdown">
+                                        <a href="" id="cash_filter_Option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/filter-icon.png" /></a>
+                                      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="cash_filter_Option">
+                                        <ul class="list-unstyled history-filterOption">
+                                            <li>History</li>
+                                            <li><input type="radio"> <label>30 Days</label></li>
+                                            <li><input type="radio"> <label>60 Days</label></li>
+                                            <li><input type="radio"> <label>90 Days</label></li>
+                                            <li><input type="radio"> <label>Custom: <input type="text" placeholder="YYYYMMDD"> to <input type="text" placeholder="YYYYMMDD"></label></li>
+                                            <li><a href="">Clear history</a></li>
+                                            <li class="mt_10">Entity Types</li>
+                                            <li><input type="checkbox"> <label>Person</label></li>
+                                            <li><input type="checkbox"> <label>Place</label></li>
+                                            <li><input type="checkbox"> <label>Event</label></li>
+                                            <li><input type="checkbox"> <label>Vehicle</label></li>
+                                            <li><input type="checkbox"> <label>Phone</label></li>
+                                            <li><input type="checkbox"> <label>Weapon</label></li>
+                                            <li><input type="checkbox"> <label>Finance</label></li>
+                                            <li><input type="checkbox"> <label>Organization</label></li>
+                                            <li><input type="checkbox"> <label>Effect</label></li>
+                                            <li><input type="checkbox"> <label>Twitter</label></li>
+                                            <li><input type="checkbox"> <label>News</label></li>
+                                            <li><input type="checkbox"> <label>RSS</label></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    </li>
+                                </ul>
+                            </div> 
+                            <!-- Sidebar Filter Nav End -->  
+                        </div>
+
+                        <!-- Case Manager form container start -->
+                        <div class="ela__sidebarForm_section">
+                            
+                            <!-- Form Row #1 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="case-filter-panel cases-dragable-listing">
+                                        
+                                        <div class="cf nestable-lists">
+                                            <a class="viewCasesLink" href="#" title="Rename">View Cases Details</a>
+                                            <div class="dd" id="nestable3">
+                                                <ol class="dd-list">
+                                                    <li class="dd-item dd3-item" data-id="13">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="14">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="15">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Entity #7890</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item dd3-item" data-id="16">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Entity #4567</div>
+                                                                <!-- Cases Action Code start -->
+                                                                <span class="dm_actionBar">
+                                                                    <a class="rename-icon" href="#" title="Rename"></a>
+                                                                    <a class="delete-icon" href="#" title="Delete"></a>
+                                                                    <a class="export-icon" href="#" title="Export"></a>
+                                                                </span>
+                                                                <!-- Cases Action Code End -->
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Entity #4567</div>
+                                                                <!-- Cases Action Code start -->
+                                                                <span class="dm_actionBar">
+                                                                    <a class="rename-icon" href="#" title="Rename"></a>
+                                                                    <a class="delete-icon" href="#" title="Delete"></a>
+                                                                    <a class="export-icon" href="#" title="Export"></a>
+                                                                </span>
+                                                                <!-- Cases Action Code End -->
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="18">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Entity #1234</div>
+                                                                <!-- Cases Action Code start -->
+                                                                <span class="dm_actionBar">
+                                                                    <a class="rename-icon" href="#" title="Rename"></a>
+                                                                    <a class="delete-icon" href="#" title="Delete"></a>
+                                                                    <a class="export-icon" href="#" title="Export"></a>
+                                                                </span>
+                                                                <!-- Cases Action Code End -->
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="13">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="14">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="15">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item dd3-item" data-id="16">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Entity #4567</div>
+                                                                <!-- Cases Action Code start -->
+                                                                <span class="dm_actionBar">
+                                                                    <a class="rename-icon" href="#" title="Rename"></a>
+                                                                    <a class="delete-icon" href="#" title="Delete"></a>
+                                                                    <a class="export-icon" href="#" title="Export"></a>
+                                                                </span>
+                                                                <!-- Cases Action Code End -->
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Entity #4567</div>
+                                                                <!-- Cases Action Code start -->
+                                                                <span class="dm_actionBar">
+                                                                    <a class="rename-icon" href="#" title="Rename"></a>
+                                                                    <a class="delete-icon" href="#" title="Delete"></a>
+                                                                    <a class="export-icon" href="#" title="Export"></a>
+                                                                </span>
+                                                                <!-- Cases Action Code End -->
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="18">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Entity #1234</div>
+                                                                <!-- Cases Action Code start -->
+                                                                <span class="dm_actionBar">
+                                                                    <a class="rename-icon" href="#" title="Rename"></a>
+                                                                    <a class="delete-icon" href="#" title="Delete"></a>
+                                                                    <a class="export-icon" href="#" title="Export"></a>
+                                                                </span>
+                                                                <!-- Cases Action Code End -->
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="13">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                    </li>
+                                                    <li class="dd-item dd3-item" data-id="14">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> Cases</div>
+                                                        <!-- Cases Action Code start -->
+                                                        <span class="dm_actionBar">
+                                                            <a class="rename-icon" href="#" title="Rename"></a>
+                                                            <a class="delete-icon" href="#" title="Delete"></a>
+                                                            <a class="export-icon" href="#" title="Export"></a>
+                                                        </span>
+                                                        <!-- Cases Action Code End -->
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Row #2 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="select_all_check">
+                                        <a id="selectAll" name="selectAll" href="#">Select All</a> <a id="clearAll" name="clearAll" href="#">Clear All</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="entity-casefields">
+                                        <input type="text" name="" class="form-control field-bg-trans" placeholder="Entity #1234">
+                                        <select class="form-control select-border-option">
+                                            <option>Case</option>
+                                            <option>Case #1234</option>
+                                            <option>Case #4567</option>
+                                            <option>Case #4767</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="Add Data" class="btn btn-md btn-block btn-white right-icon" type="submit">Add Data</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="CreateCase" class="btn btn-md btn-block btn-border">Create Case</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="Export" class="btn btn-md btn-block btn-border selectExportPop">Export</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="Export" class="btn btn-md btn-block btn-border deleteIconsPop">Delete Data</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="Export" class="btn btn-md btn-block btn-border">Link Diagram</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Case Manager form container end -->
+                    </div>
+                    <!-- Panel  #Home Div End -->
+
+                    <!-- Panel  #Bookmark Div Start -->
+                    <div id="panel_bookmarks" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Bookmarks</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Bookmark Div End -->
+
+                    <!-- Panel  #Latlong Div Start -->
+                    <div id="panel_latlong" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Lat Long</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Latlong Div End -->
+                    
+                    <!-- Panel  #TACTICAL CASE Div Start -->
+                    <div id="panel_tactical_graphics" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <div class="tab-headLogo">
+                                <img src="assets/images/ela-logo.png" />
+                            </div>
+                            <h2>TACTICAL CASE</h2>
+                            <div class="tactical_panel_section">
+                                <div id="Tactabing">
+                                  <ul>
+                                    <li><a href="#tac-create">CREATE</a></li>
+                                    <li><a href="#tac-manager">MANAGER</a></li>
+                                  </ul>
+                                  <div id="tac-create">
+                                    <div class="tac__tabs_panel">
+                                        
+                                        <div class="tactical_layername">
+                                            <h3 class="tactical_heading"><span>SYMBOLS</span></h3>
+                                            <div class="layerName_panel">
+                                                <ul class="layer-list">
+                                                    <li>
+                                                        <input type="checkbox"> New Layer #1
+                                                        <ul>
+                                                            <li>
+                                                                <input type="checkbox"> Name/Serial Number
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox"> Name/Serial Number
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox"> Name/Serial Number
+                                                            </li>
+                                                            <li>
+                                                                <input type="checkbox"> Name/Serial Number
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="tactical_case_wrapper scrollable">
+
+                                            <!-- SYMBOL HTML START -->
+                                            <div class="tactical_tab_item">
+                                                <h3 class="tactical_expand" id="expand-1"><span>SYMBOLS</span></h3>
+                                                <div class="tactical_expandable" id="tactical_expandable-1">
+                                                    
+                                                    <div class="card ela__tcUI_firstTab">
+                                                        <div class="card-header">
+                                                            <select class="form-control">
+                                                                <option>HOSTILE</option>
+                                                                <option>Option 01</option>
+                                                                <option>Option 02</option>
+                                                                <option>Option 03</option>
+                                                            </select>
+
+                                                            <div class="ela__sidebarAction">
+                                                                <ul class="list-inline">
+                                                                    <li><a href=""><img src="assets/images/nav-icon/plus-icon.png" /></a></li>
+                                                                    <li class="filter_nav">
+                                                                      <div class="dropdown">
+                                                                        <a href="" id="layerDrop_filter_Option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/filter-icon.png" /></a>
+                                                                      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="layerDrop_filter_Option">
+                                                                        <ul class="list-unstyled history-filterOption">
+                                                                            <li>History</li>
+                                                                            <li><input type="radio"> <label>30 Days</label></li>
+                                                                            <li><input type="radio"> <label>60 Days</label></li>
+                                                                            <li><input type="radio"> <label>90 Days</label></li>
+                                                                            <li><input type="radio"> <label>Custom: <input type="text" placeholder="YYYYMMDD"> to <input type="text" placeholder="YYYYMMDD"></label></li>
+                                                                            <li><a href="">Clear history</a></li>
+                                                                        </ul>
+                                                                      </div>
+                                                                    </div>
+                                                                    </li>
+                                                                    <li><a href=""><img src="assets/images/nav-icon/shorting-icon.png" /></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div id="hostile_click" class="collapse show" data-parent="#accordion">
+                                                          <div class="card-body">
+                                                            <div class="ela__tcUI_firstTab">
+                                                                <div class="ela__tcUI_iconSet">
+                                                                    <ul class="list-unstyled list-inline">
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon01.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon02.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon03.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon04.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon05.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon06.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon07.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon08.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon09.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon10.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon01.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon02.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon03.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon04.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon05.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon06.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon07.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon08.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon09.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon10.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon01.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon02.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon03.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon04.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon05.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon06.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon07.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon08.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon09.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                <img src="assets/images/tactical-case-ui/cat-icon-set/icon10.png" />
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- MISSION GRAPHICS HTML START -->
+                                            <div class="tactical_tab_item">
+                                                <h3 class="tactical_expand" id="expand-2"><span>MISSION GRAPHICS</span></h3>
+                                                <div class="tactical_expandable" id="tactical_expandable-2">
+                                                    <div class="ela__tcUI_drawtool">
+                                                        <ul class="mis-graphics-icons">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <img src="assets/images/tactical-case-ui/mission-graphics/icon01.jpg">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <img src="assets/images/tactical-case-ui/mission-graphics/icon02.jpg">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <img src="assets/images/tactical-case-ui/mission-graphics/icon03.jpg">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <img src="assets/images/tactical-case-ui/mission-graphics/icon04.jpg">
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- NEW SYMBOL HTML START -->
+                                            <div class="tactical_tab_item">
+                                                <h3 class="tactical_expand" id="expand-3"><span>NEW SYMBOL</span></h3>
+                                                <div class="tactical_expandable" id="tactical_expandable-3">
+                                                    <!-- NEW SYMBOL form container start -->
+                                                    <div class="ela__sidebarForm_section">
+
+                                                        <!-- Profile Thumbnails -->
+                                                        <div class="symbol_row">
+                                                            <div class="full-col">
+                                                                <div class="ela__sof_thumbs text-center">
+                                                                    <div class="thumb_pic">
+                                                                        <img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Form Row #1 -->
+                                                        <div class="symbol_row">
+                                                            <div class="half-col">
+                                                                <select class="form-control text-center">
+                                                                    <option>STD ID 1</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="half-col">
+                                                                <select class="form-control text-center">
+                                                                    <option>STD ID 2</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="symbol_row">
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>SYMBOL SET</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>MGRS</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="symbol_row">
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>STATUS</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>HQ/TF/DUM</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="symbol_row">
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>ECHELON</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>ICON</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="symbol_row">
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>ICON MOD 1</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="half-col">
+                                                                <select class="form-control">
+                                                                    <option>ICON MOD 2</option>
+                                                                    <option>Option 01</option>
+                                                                    <option>Option 02</option>
+                                                                    <option>Option 03</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="symbol_row symbol-icon-row">
+                                                            <div class="symbol-col symcol-1">
+                                                                <div class="sysmbol-Icon">
+                                                                    <img src="assets/images/nav-icon/star-icon.png" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="symbol-col symcol-2">
+                                                                <button class="button btn-white">ADD SYMBOL</button>
+                                                            </div>
+                                                            <div class="symbol-col symcol-3">
+                                                                <button class="button btn-border">CLEAR FORM</button>                
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <!-- NEW SYMBOL form container end -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="symbol_create_btnMeta symbol-btn-div">
+                                            <div class="full-col">
+                                                <button class="button btn-white">SAVE</button>
+                                                <button class="button btn-border">CANCEL</button>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                  </div>
+                                  <div id="tac-manager">
+                                    <div class="tac__tabs_panel">
+                                        <div class="case-filter-panel ela__treeview_panel">
+                                            <div id="treeview_container" class="ela__treeview_listing">
+                                                <ul id="treeview" class="ela__treeview_base">
+                                                    
+                                                    <!-- Tree Item 01 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> FOB Locations.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> FOB Locations
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <!-- Tree Item 02 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Police Stations.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> Police Stations
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <!-- Tree Item 03 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Bazzar.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> Bazzar
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <!-- Tree Item 04 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Selectors_Mobile_Testing.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> Selectors_Mobile_Testing
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <!-- Tree Item 05 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Police Stations_MobileApp_Testing.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> Police Stations_MobileApp_Testing
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <!-- Tree Item 06 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Qanat System.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> Qanat System
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <!-- Tree Item 07 -->
+                                                    <li>
+                                                        <i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test.kml</label>
+                                                            <ul>
+                                                                <li><i class="fa fa-plus"></i>
+                                                                    <label>
+                                                                        <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                                    </label>
+                                                                    <ul>
+                                                                        <li><label>
+                                                                            <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                      </li>
+                                                                      <li>
+                                                                          <label>
+                                                                              <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                      </li>
+                                                                  </ul>
+                                                              </li>
+                                                          </ul>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+
+                                                    <li><i class="fa fa-plus"></i>
+                                                        <label>
+                                                            <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tac_ftbuttonMeta">
+                                            <button class="btn-border">ADD</button>
+                                            <button class="btn-border">DELETE</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+
+
+                                 
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- Panel  #TACTICAL CASE Div End -->
+
+                    <!-- Panel  #Search Div Start -->
+                    <div id="panel_search" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Search</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Search Div End -->
+
+                    
+
+                    <!-- Panel  #Layer Div Start -->
+                    <div id="panel_layer" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>LAYERS DATA</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li class="filter_nav">
+                                      <div class="dropdown help-dropContent">
+                                        <a href="" id="layerHelp_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/help-icon.png" /></a>
+                                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="layerHelp_dropdown">
+                                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+                                            <p><a href="#">CBT training</a></p>
+                                        </div>
+                                    </div>
+                                    </li>
+                                    <li><a href=""><img src="assets/images/nav-icon/feedback-icon.png" /></a></li>
+                                    <li class="filter_nav">
+                                      <div class="dropdown">
+                                        <a href="" id="layerDrop_filter_Option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/filter-icon.png" /></a>
+                                      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="layerDrop_filter_Option">
+                                        <ul class="list-unstyled history-filterOption">
+                                            <li>History</li>
+                                            <li><input type="radio"> <label>30 Days</label></li>
+                                            <li><input type="radio"> <label>60 Days</label></li>
+                                            <li><input type="radio"> <label>90 Days</label></li>
+                                            <li><input type="radio"> <label>Custom: <input type="text" placeholder="YYYYMMDD"> to <input type="text" placeholder="YYYYMMDD"></label></li>
+                                            <li><a href="">Clear history</a></li>
+                                            <li class="mt_10">Event Type</li>
+                                            <li><input type="radio"> <label>Strategic Developments</label></li>
+                                            <li><input type="radio"> <label>Battles</label></li>
+                                            <li><input type="radio"> <label>Riots</label></li>
+                                            <li><input type="radio"> <label>Explosions/Remote Violence</label></li>
+                                            <li><input type="radio"> <label>Violence Against Civilians</label></li>
+                                            <li><input type="radio"> <label>Protests</label></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    </li>
+                                    <li><a href=""><img src="assets/images/nav-icon/shorting-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+
+                        <!-- Case Manager form container start -->
+                        <div class="ela__sidebarForm_section">
+                            
+                            <!-- Form Row #1 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="case-filter-panel cases-dragable-listing">
+                                        
+                                        <div class="cf nestable-lists">
+
+                                            <div class="dd" id="nestable3">
+                                                <ol class="dd-list">
+                                                    <li class="dd-item dd3-item" data-id="15">
+                                                        <div class="dd-handle dd3-handle"></div>
+                                                        <div class="dd3-content"><input type="checkbox"> ACLED Feed (25,589 Events)</div>
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item dd3-item" data-id="16">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Violence Against Civilians (3,463)</div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> June 2019 (892)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> July 2019 (1,765)</div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Strategic Developments   (4,879)</div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> June 2019 (892)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> July 2019 (1,765)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> August 2019 (2,382)</div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Battles (2,564)</div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> June 2019 (892)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> July 2019 (965)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> August 2019 (582)</div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Riots (5,328)</div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> June 2019 (392)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> July 2019 (1,794)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> August 2019 (3,382)</div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Explosions/Remote Violence (8,252)</div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> July 2019 (5,794)</div>
+                                                                    </li>
+                                                                    <li class="dd-item dd3-item" data-id="16">
+                                                                        <div class="dd-handle dd3-handle"></div>
+                                                                        <div class="dd3-content"><input type="checkbox"> August 2019 (3,382)</div>
+                                                                    </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li class="dd-item dd3-item" data-id="17">
+                                                                <div class="dd-handle dd3-handle"></div>
+                                                                <div class="dd3-content"><input type="checkbox"> Protests (3,792)</div>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Row #2 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" value="Add Data" class="btn btn-md btn-block btn-white" type="submit">Export Data</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="CreateCase" class="btn btn-md btn-block btn-border">Import Data</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" value="Export" class="btn btn-md btn-block btn-border">Link Diagram</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Case Manager form container end -->
+                    </div>
+                    <!-- Panel  #Layer Div End -->
+
+                    <!-- Panel  #Relationshio_onoff Div Start -->
+                    <div id="panel_relationshio_onoff" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Relationship On Off</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Relationshio_onoff Div End -->
+
+                    <!-- Panel  #Imagery Div Start -->
+                    <div id="panel_imagery" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Imagery</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Imagery Div End -->
+
+                    <!-- Panel  #3D Globe Div Start -->
+                    <div id="panel_3dglobe" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>3d Globe</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #3D Globe Div End -->
+
+                    <!-- Panel  #Timeline Div Start -->
+                    <div id="panel_timeline" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>TimeLine</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Timeline Div End -->
+
+                    <!-- Panel  #Drone Div Start -->
+                    <div id="panel_drone" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Drone</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Drone Div End -->
+
+                    <!-- Panel  #Facets Div Start -->
+                    <div id="panel_facets" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Facets</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Facets Div End -->
+
+                    <!-- Panel  #KML Upload Div Start -->
+                    <div id="panel_kmlupload" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Kml Upload</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+
+                         <!-- Kml Upload container start -->
+                        <div class="ela__sidebarForm_section">
+                            
+                            <!-- Form Row #1 -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="case-filter-panel ela__treeview_panel">
+                                        
+                                        <div id="treeview_container" class="ela__treeview_listing">
+                                            <ul id="treeview" class="ela__treeview_base">
+                                                
+                                                <!-- Tree Item 01 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> FOB Locations.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> FOB Locations
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+
+                                                <!-- Tree Item 02 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> Police Stations.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> Police Stations
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+
+                                                <!-- Tree Item 03 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> Bazzar.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> Bazzar
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+
+                                                <!-- Tree Item 04 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> Selectors_Mobile_Testing.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> Selectors_Mobile_Testing
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+
+                                                <!-- Tree Item 05 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> Police Stations_MobileApp_Testing.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> Police Stations_MobileApp_Testing
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+
+                                                <!-- Tree Item 06 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> Qanat System.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> Qanat System
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+
+                                                <!-- Tree Item 07 -->
+                                                <li>
+                                                    <i class="fa fa-plus"></i>
+                                                    <label>
+                                                        <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test.kml</label>
+                                                        <ul>
+                                                            <li><i class="fa fa-plus"></i>
+                                                                <label>
+                                                                    <input id="" data-id="" type="checkbox"> Polling Stations (Demo)_Test
+                                                                </label>
+                                                                <ul>
+                                                                    <li><label>
+                                                                        <input id="" data-id="" type="checkbox"> 2PLT1CO</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label><input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT2CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> 1PLT1CO</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 4HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 3 HQ</label>
+                                                                  </li>
+                                                                  <li>
+                                                                      <label>
+                                                                          <input class="hummingbirdNoParent" id="" data-id="" type="checkbox"> COMPANY 1 HQ</label>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                </li>
+                                                  
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-md btn-block btn-white">KML</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-md btn-block btn-border">KMZ</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-md btn-block btn-border">ION</button>
+                                </div>
+                                <div class="col-md-12 ela__kml_btnRow">
+                                    <input type="button" id="mapAddPointButton" class="mapPopClass cesium-button cesium-toolbar-button" title="Add Point">
+                                    <input type="button" id="mapAddPolygonButton" class="mapPopClass cesium-button cesium-toolbar-button" title="Add Polygon">
+                                    <input type="button" id="mapAddPathButton" class="mapPopClass cesium-button cesium-toolbar-button" title="Add Path">
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Kml Upload container end -->
+                    </div>
+                    <!-- Panel  #KML Upload Div End -->
+
+                    <!-- Panel  #Import Export Div Start -->
+                    <div id="panel_import_export" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Import/Export</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Import Export Div End -->
+
+                    <!-- Panel  #PPT Export Div Start -->
+                    <div id="panel_ppt_export" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>PPT Export</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #PPT Export Div End -->
+
+                    <!-- Panel  #NAI Div Start -->
+                    <div id="panel_nai" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Nai</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #NAI Div End -->
+
+                    <!-- Panel  #Help Div Start -->
+                    <div id="panel_help" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Help</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Help Div End -->
+
+
+                    <!-- Panel  #Rules Div Start -->
+                    <div id="panel_rules" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Rules</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Rules Div End -->
+
+                    <!-- Panel  #Nigth Mode Div Start -->
+                    <div id="panel_nigthmode" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Night Mode</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Nigth Mode Div End -->
+
+                    <!-- Panel  #Logout Mode Div Start -->
+                    <div id="panel_logout" class="ela__innerNav_panel">
+                        <div class="sideNav-head">
+                            <h2>Logout</h2>
+                            <div class="ela__sidebarAction">
+                                <ul class="list-inline">
+                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                </ul>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Panel  #Logout Mode Div End -->
+                </div>
+            </div>
+            <!-- Sidebar Flyout Container End -->
+        </div>
+        <!-- Sidebar Navigation End -->
+
+
+        <!-- KML Popop Add Popup HTML Start -->
+            <div id="AddKmlPath" class="add_ShowPopupDiv add_kml_popupDiv" style="display: none;">
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">New <span>Point</span> </div>
+                <div class="body">
+                    <div class="popup-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="Name" id="txtPathName" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="MapPopTabs">
+                                  <ul>
+                                    <li><a href="#addPop-Des">Description</a></li>
+                                    <li><a href="#addPop-style">Style, Color</a></li>
+                                    <li><a href="#addPop-View">View</a></li>
+                                    <li><a href="#addPop-Meas">Measurements</a></li>
+                                  </ul>
+                                  <div id="addPop-Des">
+                                    <div class="Maptabs_panel">
+                                        <textarea id="textAreaDescription" placeholder="Please write some description here" spellcheck="false" class="form-control"></textarea>
+                                    </div>
+                                  </div>
+                                  <div id="addPop-style">
+                                    <div class="Maptabs_panel">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>Colour :</label>
+                                                <div class="field-item">
+                                                    <input id="" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>Scale :</label>
+                                                <div class="field-item">
+                                                    <input id="" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>Opacity :</label>
+                                                <div class="field-item fieldIns">
+                                                    <input id="" class="form-control"> <span>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div id="addPop-View">
+                                    <div class="Maptabs_panel">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>Latitude :</label>
+                                                <div class="field-item">
+                                                    <input id="" value="" placeholder="NA" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>Longitude :</label>
+                                                <div class="field-item">
+                                                    <input id="" value="" placeholder="NA" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>&nbsp;</label>
+                                                <div class="field-item">
+                                                    <input type="button" title="Reset" value="Reset" id="btnResetPosition">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div id="addPop-Meas">
+                                    <div class="Maptabs_panel">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <label>Length :</label>
+                                                <div class="field-item fieldIns"><input id="" value="" placeholder="0" class="form-control"> <span class="ins">Km</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- KML Popop Add Popup HTML End -->
+
+
+        <!-- View Cases Details Popup HTML Start -->
+            <div id="viewCaseDetails" class="showPopupViewDesign PopupWidth400 viewCaseDetails_popupDiv" style="display: none;">
+                <a href="" class="popupFilter"></a>
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">Test Case</div>
+                <div class="body">
+                    <div class="popup-content text-center viewcaseInfo">
+                        <div class="popRow">Created Date: <span>2020-03-12 10:56 AM</span></div>
+                        <div class="popRow">
+                            <a href="" class="btn btn-popup viewCasesInnerPop">View Case Details</a>
+                            <a href="" class="btn btn-popup">Zoom Location</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- View Cases Details Popop HTML End -->
+
+
+        <!-- View Cases Details Button Click Popup HTML Start -->
+            <div id="viewCaseDetailsinner" class="showPopupViewDesign PopupWidth400 viewCaseDetailsInner_popupDiv" style="display: none;">
+                <a href="" class="popupFilter"></a>
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">test 1</div>
+                <div class="body">
+                    <div class="popup-content text-center viewcaseInfoInner">
+                        <div class="popRow">
+                            <h4>Entity Type : Person</h4>
+                            <h4>Description : test entity update1</h4>
+                        </span></div>
+                        <div class="popRow">
+                            <a href="" class="norLink viewEntityPop">View Entity</a><br/>
+                            <a href="" class="norLink">Expand relationships with current entities.</a><br/>
+                            <a href="" class="norLink">Expand relationships for all entities.</a><br/>
+                            <a href="" class="norLink">Clear Relationships</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- View Cases Details  Button Click Popop HTML End -->
+
+        <!-- View Entity Popup HTML Start -->
+            <div id="viewEntityPopup" class="showPopupViewDesign PopupWidth400 viewEntity_popupDiv" style="display: none;">
+                <a href="" class="popupFilter"></a>
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">View Entity</div>
+                <div class="body">
+                    <div class="popup-content viewEntityinfo">
+                        <div class="popRow">
+                            <h3>Test Person</h3>
+                        </span></div>
+                        <div class="popRow">
+                            <figure>
+                                <img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg">
+                            </figure>
+                        </div>
+                        <div class="popRow popupOverflowInfo">
+                            <table>
+                                <tr>
+                                    <td>MGRS:</td>
+                                    <td>4Q3858ERSD584</td>
+                                </tr>
+                                <tr>
+                                    <td>Title:</td>
+                                    <td>MRS</td>
+                                </tr>
+                                <tr>
+                                    <td>Intelligence Value:</td>
+                                    <td>Possible</td>
+                                </tr>
+                                <tr>
+                                    <td>Security Classification Level:</td>
+                                    <td>Unclassified</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender:</td>
+                                    <td>Female</td>
+                                </tr>
+                                <tr>
+                                    <td>Title:</td>
+                                    <td>MRS</td>
+                                </tr>
+                                <tr>
+                                    <td>Intelligence Value:</td>
+                                    <td>Possible</td>
+                                </tr>
+                                <tr>
+                                    <td>Security Classification Level:</td>
+                                    <td>Unclassified</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender:</td>
+                                    <td>Female</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="popRow text-center">
+                            <a href="" class="btn btn-popup">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- View Entity Popop HTML End -->
+
+        <!-- View Entity Popup HTML Start -->
+            <div id="selectIconPopup" class="showPopupViewDesign PopupWidth400 selectIcon_popupDiv" style="display: none;">
+                <a href="" class="popupFilter"></a>
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">Select Icon</div>
+                <div class="body">
+                    <div class="popup-content selectIconinfo">
+                        <div class="popRow popupOverflowInfo">
+                            <div class="iconFull_Info">
+                                <figure>
+                                    <img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg">
+                                </figure>
+                                <h3>Person Government Official Brown</h3>
+                            </div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                            <div class="iconItem"><img src="assets/images/tactical-case-ui/sof-thumb-pic.jpg"></div>
+                        </div>
+                        <div class="popRow text-center">
+                            <a href="" class="btn btn-popup">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- View Entity Popop HTML End -->
+
+        <!-- View Export Type Popup HTML Start -->
+            <div id="viewExportType" class="showPopupViewDesign PopupWidth400 viewExportType_popupDiv" style="display: none;">
+                <a href="" class="popupFilter"></a>
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">EXPORT TYPE</div>
+                <div class="body">
+                    <div class="popup-content text-center viewcaseInfo">
+                        <div class="popRow">
+                            <a href="" class="btn btn-popup viewCasesInnerPop">EXPORT TO KML</a>
+                            <a href="" class="btn btn-popup">EXPORT TO CSV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- View Export Type Popop HTML End -->
+
+        <!-- Delete Icons Popup HTML Start -->
+            <div id="deleteIconsPopup" class="showPopupViewDesign PopupWidth400 deleteIcons_popupDiv" style="display: none;">
+                <a href="" class="popupFilter"></a>
+                <a href="" class="closeMapPop"></a>
+                <div class="header txt-white">EXPORT TYPE</div>
+                <div class="body">
+                    <div class="popup-content text-center viewcaseInfo">
+                        <div class="popRow">
+                            <p>Are you really want to delete this case?</p>
+                        </div>
+                        <div class="popRow">
+                            <a href="" class="btn btn-popup viewCasesInnerPop">YES</a>
+                            <a href="" class="btn btn-popup">NO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Delete Icons Type Popop HTML End -->
+
+
+        
+        
+        <!-- Main Wrapper Background Start -->    
+        <div id="cesiumContainer"></div>
+        <!-- Main Wrapper Background End -->    
+
+
+        <!--jQuery js-->
+        <script src="assets/js/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!--bootstrap js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/slick.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.nestable.js"></script>
+
+        <script type="text/javascript" src="assets/js/treeview.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <script src="https://cesium.com/downloads/cesiumjs/releases/1.64/Build/Cesium/Cesium.js"></script>
+        <script>
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4YzIyMDI2Yy00Y2RmLTQ4MGQtOTU4Zi1kZjg2MjZmNzNlOWYiLCJpZCI6MTI4LCJzY29wZXMiOlsiYXNsIiwiYXNyIiwiZ2MiXSwiaWF0IjoxNTUyMDk2MTU2fQ.VEqWD8IDEQ3mCKbDWb4B61RfUa5WVa4okimbijKapfQ';
+    var viewer = new Cesium.Viewer('cesiumContainer');
+    </script>
+    
+    </body>
+</html>
