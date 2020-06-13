@@ -1,0 +1,84 @@
+#panel_debriefing_form .sideNav-head {
+    display: inline-block;
+    width: 100%;
+    }
+.ela_debriefing_form_container .stepDivHead { display: none; }
+.ela_debriefing_form_container #ela_deb_form_wizard .steps { display: none; }
+
+
+#ela_deb_form_wizard .actions ul li.disabled {
+    display: none;
+}
+.ela_debFormStep_Container .showHideCurDiv {
+    display: none;
+}
+#ela_deb_form_wizard .actions { margin-top: 10px; }
+#ela_deb_form_wizard .actions ul li { float: left; width: 50%; padding: 0% 1%; vertical-align: top; text-align: center; list-style: none; }
+#ela_deb_form_wizard .actions ul li > a {
+    border-radius: 0;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    background-color: #FFF;
+    border: 1px solid #FFF;
+    color: #362f2d;
+    padding: 1px 10px;
+    position: relative;
+    display: block;
+}
+#ela_deb_form_wizard .actions ul li > a:hover { text-decoration: none; background-color: transparent; border: 1px solid #FFF; color: #FFF; }
+.ela_debFormStep_Container .fields_row { display: flex; padding: 0px 0px; color: #FFF; }
+.ela_debFormStep_Container .fields_row h3.debSectionHead { text-align: center; font-size: 20px; font-style: italic; margin-top: 5px; color: #FFF; }
+.ela_debFormStep_Container .fields_row .subPara { font-weight: 400; font-size: 16px; font-style: italic; color: #FFF; }
+
+.ela_debFormStep_Container .fields_row .Step-ShowHide-Button { padding-bottom: 10px; display: flex; }
+.ela_debFormStep_Container .fields_row .Step-ShowHide-Button input[type='button'] { padding: 0px 10px;
+    height: auto;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #FFF;
+    background-color: transparent;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #FFF; width: 48.5%; float: left; text-transform: uppercase; }
+.ela_debFormStep_Container .fields_row .Step-ShowHide-Button .mLeft10 { margin-left: 3%; }
+.ela_debFormStep_Container .fields_row .Step-ShowHide-Button input.active,
+.ela_debFormStep_Container .fields_row .Step-ShowHide-Button input[type='button']:hover {color: #362f2d;
+    background-color: #FFF;  }
+
+.ela_debFormStep_Container .fields_row .fields_column { padding: 1px 5px; }
+.ela_debFormStep_Container .fields_row .fields_column.columnOne { width: 100%; float: left; }
+.ela_debFormStep_Container .fields_row .fields_column.columnTwo { width: 50%; float: left; }
+.ela_debFormStep_Container .fields_row .fields_column.columnThree { width: 33.33%; float: left; }
+.ela_debFormStep_Container .fields_row .fields_column.columnFour { width: 25%; float: left; }
+.ela_debFormStep_Container .fields_row .fields_column.columnOneThird { width: 66%; float: left; }
+
+
+
+.ela_debFormStep_Container .fields_row .fieldStyle,
+.ela_debFormStep_Container .fields_row input[type='text'],
+.ela_debFormStep_Container .fields_row select { border-radius: 0; 
+    padding: 0px 10px;
+    height: auto;
+    font-weight: 300;
+    font-size: 17px;
+    margin-bottom: 3px;
+    color: #362f2d;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #362f2d; width: 100%; }
+
+ .ela_debFormStep_Container .fields_row textarea.fieldStyle { height: 80px; color: #362f2d; }
+.ela_debFormStep_Container .fields_row .fieldStyle:focus { color: #362f2d; }
+.ela_debFormStep_Container .fields_row .fieldStyle::-webkit-input-placeholder { color: #362f2d; }
+.ela_debFormStep_Container .fields_row .fieldStyle::-moz-placeholder { color: #362f2d; }
+.ela_debFormStep_Container .fields_row .fieldStyle:-ms-input-placeholder { color: #362f2d; }
+.ela_debFormStep_Container .fields_row .fieldStyle:-moz-placeholder { color: #362f2d; }
+
+
+.ela_debFormStep_Container .fields_row label { font-weight: 400; font-size: 17px; line-height: 30px; color: #FFF; }
+.ela_debFormStep_Container .fields_row label.fieldLabel { line-height: 1.1; }
+.ela_debFormStep_Container .fields_row  .forceFields > span { width: 31.333%; padding: 0% 1%; float: left; text-align: center; font-size: 17px; }
+.ela_debFormStep_Container .fields_row  .forceFields .fieldStyle { height: 30px; }

@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
         <!--main css-->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/covid-tracker-style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/debriefing-form-style.css">
          
         <link href="https://cesium.com/downloads/cesiumjs/releases/1.64/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     </head>
@@ -35,6 +37,7 @@
                     <li><a href="#" class="alert-icon"><img src="assets/images/nav-icon/alert-icon.png" /></a></li>
                     <li><a href="#" class="translator-icon"><img src="assets/images/nav-icon/translator-icon.png" /></a></li>
                     <li><a href="#" class="liveFeed_toggle live-feed-icon"><img src="assets/images/nav-icon/live-feed.png" /></a></li>
+                    <li><a href="#" class="panel_covid_tracker"><img src="assets/images/covid-tracker/COVID-Tracker-Icon.png" /></a></li>
                 </ul>
             </div>
         </div>
@@ -87,9 +90,9 @@
                     <li><a href="#" class="panel_casemanager"><img src="assets/images/nav-icon/case-manager-icon.png" /></a></li>
                     <li><a href="#" class="panel_add_entity"><img src="assets/images/nav-icon/add-entity-icon.png" /></a></li>
                     <li><a href="#" class="panel_tactical_graphics"><img src="assets/images/nav-icon/tactical-graphics-icon.png" /></a></li>
-                    <li><a href="#" class="panel_kmlupload"><img src="assets/images/nav-icon/kml-upload-icon.png" /></a></li>
+                    <li><a href="#" class="panel_debriefing_form"><img src="assets/images/nav-icon/kml-upload-icon.png" /></a></li>
                     <li><a href="#" class="panel_layer"><img src="assets/images/nav-icon/layer-icon.png" /></a></li>
-                    <li><a href="#" class="panel_relationshio_onoff"><img src="assets/images/nav-icon/relationship-on-off-icon.png" /></a></li>
+                    <li><a href="#" class="panel_kmlupload"><img src="assets/images/nav-icon/relationship-on-off-icon.png" /></a></li>
                     <li><a href="#" class="panel_search"><img src="assets/images/nav-icon/search-icon.png" /></a></li>
                     <li><a href="#" class="panel_nai"><img src="assets/images/nav-icon/nai-icon.png" /></a></li>
                     <li><a href="#" class="panel_import_export"><img src="assets/images/nav-icon/import-export-icon.png" /></a></li>
@@ -1565,18 +1568,881 @@
                     </div>
                     <!-- Panel  #Layer Div End -->
 
-                    <!-- Panel  #Relationshio_onoff Div Start -->
-                    <div id="panel_relationshio_onoff" class="ela__innerNav_panel">
+                    <!-- Panel  #Debriefing Form Div Start -->
+                    <div id="panel_debriefing_form" class="ela__innerNav_panel">
                         <div class="sideNav-head">
-                            <h2>Relationship On Off</h2>
+                            <h2>DEBRIEF REPORT</h2>
                             <div class="ela__sidebarAction">
                                 <ul class="list-inline">
-                                    <li><a href=""><img src="assets/images/nav-icon/help-icon.png" /></a></li>
+                                    <li class="filter_nav">
+                                      <div class="dropdown help-dropContent">
+                                        <a href="" id="layerHelp_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/help-icon.png" /></a>
+                                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="layerHelp_dropdown">
+                                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+                                            <p><a href="#">CBT training</a></p>
+                                        </div>
+                                    </div>
+                                    </li>
+                                    <li><a href=""><img src="assets/images/nav-icon/feedback-icon.png" /></a></li>
+                                    <li class="filter_nav">
+                                      <div class="dropdown">
+                                        <a href="" id="layerDrop_filter_Option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/nav-icon/filter-icon.png" /></a>
+                                      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="layerDrop_filter_Option">
+                                        <ul class="list-unstyled history-filterOption">
+                                            <li>History</li>
+                                            <li><input type="radio"> <label>30 Days</label></li>
+                                            <li><input type="radio"> <label>60 Days</label></li>
+                                            <li><input type="radio"> <label>90 Days</label></li>
+                                            <li><input type="radio"> <label>Custom: <input type="text" placeholder="YYYYMMDD"> to <input type="text" placeholder="YYYYMMDD"></label></li>
+                                            <li><a href="">Clear history</a></li>
+                                            <li class="mt_10">Event Type</li>
+                                            <li><input type="radio"> <label>Strategic Developments</label></li>
+                                            <li><input type="radio"> <label>Battles</label></li>
+                                            <li><input type="radio"> <label>Riots</label></li>
+                                            <li><input type="radio"> <label>Explosions/Remote Violence</label></li>
+                                            <li><input type="radio"> <label>Violence Against Civilians</label></li>
+                                            <li><input type="radio"> <label>Protests</label></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    </li>
+                                    <li><a href=""><img src="assets/images/nav-icon/shorting-icon.png" /></a></li>
                                 </ul>
-                            </div>  
+                            </div>   
                         </div>
+                        <!-- Debriefing Form Container Start -->
+                        <div class="ela__sidebarForm_section">
+                            <div class="ela_debriefing_form_container">
+                                <div class="">
+                                    <div id="ela_deb_form_wizard">
+                                        
+                                        <!-- Step #1 Start -->
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="ela_debForm_panel">
+                                                
+                                                <!-- 1. REPORTING INFORMATION START-->
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <h3 class="debSectionHead">1.  REPORTING INFORMATION</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <input type="text" name="" placeholder="Report Number" class="fieldStyle" />
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Reported By</option>
+                                                            <option>SSG Jones</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Report DTG</option>
+                                                            <option>3/14/2020 1900L</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 2. BASIC MISSION DETAILS START-->
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <h3 class="debSectionHead">2. BASIC MISSION DETAILS</h3>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Unit</option>
+                                                            <option>Team 2</option>
+                                                            <option>C-Co</option>
+                                                            <option>2nd</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Mission</option>
+                                                            <option>KLE</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Mission Commander" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Location(s)" class="fieldStyle">
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Mission Start DTG</option>
+                                                            <option>3/14/2020 1300L</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Mode of Travel</option>
+                                                            <option>Dismounted Patrol</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>Mission End DTG</option>
+                                                            <option>3/14/2020 1300L</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <select class="fieldStyle">
+                                                            <option>SECFOR</option>
+                                                            <option>Nigerian Army (NA)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #2 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+
+                                            <!-- 3. CRITICAL INCIDENT(S) DETAILS START-->
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <h3 class="debSectionHead">3. CRITICAL INCIDENT(S) DETAILS</h3>
+                                                        <p class="subPara">Did you receive contact from an enemy force(s)?</p>
+                                                        <div class="Step-ShowHide-Button">
+                                                            <input type="button" name="" value="Yes" data-title="CI_ShowHide_1" class="btncls" onclick="ShowHideDiv(this)">
+                                                            <input type="button" name="" value="No" data-title="CI_ShowHide_1" class="btncls active mLeft10" onclick="ShowHideDiv(this)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div id="CI_ShowHide_1" class="showHideCurDiv" style="display: none">
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnTwo">
+                                                            <select class="fieldStyle">
+                                                                <option>Entity Type(s)</option>
+                                                                <option>SAF</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="fields_column columnTwo">
+                                                            <input type="text" name="" placeholder="Actor 1"  class="fieldStyle">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnTwo">
+                                                            <input type="text" name="" placeholder="Entity Location(s)" class="fieldStyle">
+                                                        </div>
+                                                        <div class="fields_column columnTwo">
+                                                            <input type="text" name="" placeholder="Actor 2" class="fieldStyle">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnTwo">
+                                                            <select class="fieldStyle">
+                                                                <option>Start DTG</option>
+                                                                <option>3/14/2020 1300L</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="fields_column columnTwo">
+                                                            <input type="text" name="" placeholder="Actor 3" class="fieldStyle">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnTwo">
+                                                            <select class="fieldStyle">
+                                                                <option>End DTG</option>
+                                                                <option>3/14/2020 1300L</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="fields_column columnTwo">
+                                                            <input type="text" name="" placeholder="Actor 4" class="fieldStyle">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnOne">
+                                                            <textarea class="fieldStyle">Comments</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </section>
+
+                                        <!-- Step #3 Start --> 
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <!-- 3. CRITICAL INCIDENT(S) DETAILS START-->
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <h3 class="debSectionHead">3. CRITICAL INCIDENT(S) DETAILS</h3>
+                                                        <p class="subPara">Were there any WIA, KIA, or MIA (CF or enemy)?</p>
+                                                        <div class="Step-ShowHide-Button">
+                                                            <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_2">
+                                                            <input type="button" name="" data-title="CI_ShowHide_2" value="No" class="btncls active mLeft10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="CI_ShowHide_2" class="showHideCurDiv">
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnThree">
+                                                            <label>Force Type</label>
+                                                        </div>
+                                                        <div class="fields_column columnOneThird">
+                                                            <div class="forceFields">
+                                                                <span>WIA</span>
+                                                                <span>KIA</span>
+                                                                <span>MIA/DET</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnThree">
+                                                            <label>US</label>
+                                                        </div>
+                                                        <div class="fields_column columnOneThird">
+                                                            <div class="forceFields">
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnThree">
+                                                            <label>HNG</label>
+                                                        </div>
+                                                        <div class="fields_column columnOneThird">
+                                                            <div class="forceFields">
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnThree">
+                                                            <label>FSF</label>
+                                                        </div>
+                                                        <div class="fields_column columnOneThird">
+                                                            <div class="forceFields">
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnThree">
+                                                            <label>Civilian</label>
+                                                        </div>
+                                                        <div class="fields_column columnOneThird">
+                                                            <div class="forceFields">
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fields_row">
+                                                        <div class="fields_column columnThree">
+                                                            <label>Enemy</label>
+                                                        </div>
+                                                        <div class="fields_column columnOneThird">
+                                                            <div class="forceFields">
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                                <span><input type="text" name="" placeholder="" class="fieldStyle"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </section>
+
+                                        <!-- Step #4 Start --> 
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">3. CRITICAL INCIDENT(S) DETAILS</h3>
+                                                    <p class="subPara">Detainee information</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_3">
+                                                        <input type="button" name="" value="No" class="btncls active mLeft10" data-title="CI_ShowHide_3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_3" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Detainee Number" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Title" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="First Name" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Alias" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Middle Name" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="date" name="" placeholder="DOB" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Last Name" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Job/Position" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Tribe" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Address/Neighborhood" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <input type="text" name="" placeholder="Why was he/she arrested?" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Prior arrests?" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Evidence description" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="By whom and when?" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Evidence collected?" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <textarea class="fieldStyle">Comments</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #5 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <!-- 4. KEY LEADER ENGAGEMENT DETAILS START-->
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">4. KEY LEADER ENGAGEMENT DETAILS</h3>
+                                                    <p class="subPara">Did you conduct a Key Leader Engagement?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_4">
+                                                        <input type="button" name="" value="No" class="btncls active mLeft10" data-title="CI_ShowHide_4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_4" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="KLE Location"  class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Personnel 2"  class="fieldStyle">
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="MGRS"  class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Personnel 3"  class="fieldStyle">
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="DTG"  class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Personnel 4"  class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Personnel 1"  class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Personnel 5"  class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <textarea class="fieldStyle">Purpose of the engagement</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">How would you describe key leader’s sentiment towards American forces?</label>
+                                                        <select class="fieldStyle">
+                                                            <option>Trusting</option>
+                                                            <option>--,,--</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <textarea class="fieldStyle">Comments</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+
+                                        <!-- Step #6 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+
+                                            <!-- 4. KEY LEADER ENGAGEMENT DETAILS START-->
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">4. KEY LEADER ENGAGEMENT DETAILS</h3>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <label class="fieldLabel">How would you describe key leader’s sentiment towards HNG/FSF?</label>
+                                                    <select class="fieldStyle">
+                                                        <option>Neutral/Unknown</option>
+                                                        <option>--,,--</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <textarea class="fieldStyle">Comments</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <label class="fieldLabel">Did key leader provide information about potential threats to CF/HNG/FSF?</label>
+                                                    <textarea class="fieldStyle"></textarea>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #7 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+
+                                            <!-- 5. INSIDER THREAT START-->
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">5. INSIDER THREAT</h3>
+                                                    <p class="subPara">Did you encounter any FSF personnel appearing unreceptive towards coalition forces?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_5">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_5" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_5" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What were the behavioral indicators?</label>
+                                                        <input type="text" name="" placeholder="" class="fieldStyle">
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What was the causation?</label>
+                                                        <select class="fieldStyle" multiple="" style="height: 70px;">
+                                                            <option>Personal</option>
+                                                            <option>Reactionary</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #8 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <!-- 5. INSIDER THREAT START-->
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">5. INSIDER THREAT</h3>
+                                                    <p class="subPara">Did you submit an Alert?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_6">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_6" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_6" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="First Name" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Rank" class="fieldStyle">
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Middle Name" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="date" name="" placeholder="DOB" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Last Name" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="date" name="" placeholder="Job/Position" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="text" name="" placeholder="Tribe" class="fieldStyle">
+                                                    </div>
+                                                    <div class="fields_column columnTwo">
+                                                        <input type="date" name="" placeholder="Unit" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <input type="text" name="" placeholder="Alias" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What comments or actions did the FSF person(s) that cause you to make your assessment?</label>
+                                                        <textarea  class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <textarea  class="fieldStyle">Comments</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #9 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <!-- 6. OBSERVATIONS START-->
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">6. OBSERVATIONS</h3>
+                                                    <p class="subPara">Did you observe any important locations while on mission not previously reported?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_7">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_7" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_7" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What type of location was it?</label>
+                                                        <input type="text" name="" placeholder="FSF bases" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <input type="text" name="" placeholder="Entity Location(s)" class="fieldStyle">
+                                                    </div>
+                                                </div>
+
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <textarea  class="fieldStyle">Comments</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #10 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">6. OBSERVATIONS</h3>
+                                                    <p class="subPara">Did you encounter any key HNG/FSF while on mission not previously reported in this debriefing?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_8">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_8" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_8" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What key HNG/FSF personnel or local influencers did you encountered?</label>
+                                                        <input type="text" name="" placeholder="CPT Helper" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What were the atmospherics of the local population like during the mission? </label>
+                                                        <input type="text" name="" placeholder="CPT Helper" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #11 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">6. OBSERVATIONS</h3>
+                                                    <p class="subPara">Did you encounter any non-hostile civilian activity such as protests?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_9">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_9" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_9" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What type of civilian activity did you encountered?</label>
+                                                        <textarea class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <input type="text" name="" placeholder="Location(s)" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Comments</label>
+                                                        <textarea class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #12 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">7. OSINT INFORMATION</h3>
+                                                    <p class="subPara">Did you collect any OSINT or social media leads while on mission?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_10">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_10" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_10" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What type(s) of information did you collect?</label>
+                                                        <select class="fieldStyle">
+                                                            <option>User Names</option>
+                                                            <option>User Names</option>
+                                                            <option>User Names</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What is the source(s) of the information?</label>
+                                                        <input type="text" name="" placeholder="Dr. Matt" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Comments</label>
+                                                        <textarea class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #13 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">8. DOCEX AND SSE INFORMATION</h3>
+                                                    <p class="subPara">Did you collect any documents of value during your mission?</p>
+                                                    <div class="Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_11">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_11" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_11" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What is the type?</label>
+                                                        <select class="fieldStyle">
+                                                            <option>List of Known BH</option>
+                                                            <option>User Names</option>
+                                                            <option>User Names</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What is the source?</label>
+                                                        <input type="text" name="" placeholder="" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Comments</label>
+                                                        <textarea class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Upload Scanned File(s) or Photo(s)</label>
+                                                        <input type="file" name="" placeholder="" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #14 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">8. DOCEX AND SSE INFORMATION</h3>
+                                                    <p class="subPara">Did you collect any equipment or weapons of value during your mission?</p>
+                                                    <div class="btncls Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_12">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_12" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_12" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What type?</label>
+                                                        <select class="fieldStyle">
+                                                            <option>Equipment</option>
+                                                            <option>--,,--</option>
+                                                            <option>--,,--</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Describe the type of equipment.</label>
+                                                        <textarea class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">What is the source?</label>
+                                                        <input type="text" name="" placeholder="" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Comments</label>
+                                                        <textarea class="fieldStyle"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Upload Photo(s)</label>
+                                                        <input type="file" name="" placeholder="" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #15 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">9. ADDITIONAL DOCUMENTS </h3>
+                                                    <p class="subPara">Did you collect any documents of value not previously uploaded?</p>
+                                                    <div class="btncls Step-ShowHide-Button">
+                                                        <input type="button" name="" value="Yes" class="btncls" data-title="CI_ShowHide_13">
+                                                        <input type="button" name="" value="No" data-title="CI_ShowHide_13" class="btncls active mLeft10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="CI_ShowHide_13" class="showHideCurDiv">
+                                                <div class="fields_row">
+                                                    <div class="fields_column columnOne">
+                                                        <label class="fieldLabel">Upload Photo(s)</label>
+                                                        <input type="file" name="" placeholder="" class="fieldStyle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <!-- Step #16 Start -->    
+                                        <div class="stepDivHead"></div>
+                                        <section class="ela_debFormStep_Container">
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <h3 class="debSectionHead">10. NARRATIVE</h3>
+                                                </div>
+                                            </div>
+                                            <div class="fields_row">
+                                                <div class="fields_column columnOne">
+                                                    <textarea class="fieldStyle"></textarea>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Debriefing Form Container End -->
                     </div>
-                    <!-- Panel  #Relationshio_onoff Div End -->
+                    <!-- Panel  #Debriefing Form Div End -->
 
                     <!-- Panel  #Imagery Div Start -->
                     <div id="panel_imagery" class="ela__innerNav_panel">
@@ -2324,6 +3190,332 @@
         <!-- Delete Icons Type Popop HTML End -->
 
 
+        <!-- COVID 19 TRACKER HTML Start -->
+        <div id="ela_covid_tracker_wrap">
+            <div class="ela__covid_tracker_flyout" style="display: none;">
+                <div id="panel_covid_tracker" class="ela__covid_tracker_panel">
+                    <div class="sideNav-covid-head">
+                        <div class="headLogo">
+                            <img src="assets/images/ela-logo.png" />
+                        </div>
+                        <h2>COVID-19 TRACKER</h2>
+                        <!-- COVID 19 TRACKER Close Button Start -->
+                        <div class="closeBtn-Div">
+                            <ul class="list-inline">
+                                <li><a class="closeBtn" href=""><img src="assets/images/nav-icon/close-icon.png" /></a></li>
+                                
+                            </ul>
+                        </div>
+                        <!-- COVID 19 TRACKER Close Button End -->
+                    </div>
+                    <!-- ADD ENTITY form container start -->
+                    <div class="ela__sidebarForm_section">
+                        <div id="covideTracker-accordion" class="ui-accordion ui-widget ui-helper-reset">
+                            <div class="covid-togglePanel">
+                                <!-- Sidebar Filter Nav Start -->
+                                <div class="ela__sidebarAction">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <div class="covidFilterWrap">
+                                                <a href="javascript:void(0)" class="covid_export_Option">
+                                                    <img src="assets/images/covid-tracker/export.png" /></a>
+                                                </a>
+                                                <div class="covid-ShowFilter-Wrap covid-ExportPopup covid-ExportShow" style="display: none;">
+                                                    <input type="button" value="Export as CSV" id="exportStateDataCsv">
+                                                    <input type="button" value="Export as Image" id="exportStateDataImage">
+                                                    <span class="close-icon">
+                                                        <input type="button" value="X" class="crossBtn covid_export_Option">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            
+                                        <li class="filter_nav">
+                                          <div class="covidFilterWrap">
+                                            <a href="javascript:void(0)" class="covid_filter_Option">
+                                                <img src="assets/images/nav-icon/filter-icon.png" />
+                                            </a>
+                                            <div class="covid-ShowFilter-Wrap covid-FilterShow" style="display: none;">
+                                                <ul class="history-filterOption">
+                                                    <li><label>Select Date</label> <input type="date" name="" placeholder="06-06-2020"/></li>
+                                                    <li>
+                                                        <label>Select State</label> 
+                                                        <select>
+                                                            <option>Select State</option>
+                                                            <option>State 01</option>
+                                                        </select>
+                                                    </li>
+                                                    <li class="btnLeftSpace"><a href="javascript:void(0)" class="btn btn-md btn-white covid_filter_Option">Cancel</a> <a href="" class="btn btn-md btn-white">Filter</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        </li>
+                                    </ul>
+                                </div> 
+                                <!-- Sidebar Filter Nav End -->
+                              <div class="covid-toggleHead trackerToggleNav">
+                                AILY COVID-19 STATUS (NORTH CAROLINA)
+                              </div>
+                              <div class="covid-toggleContent">
+                                <div class="covid-dailyCases">
+                                    <span class="dateItem">06-08-2020</span>
+                                    <div class="covid-stateContainer-data">
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">NEW  CASES</span>
+                                            <div class="stateCountRight">
+                                                <span class="dataCount">892</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">NEW  DEATHS</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">892</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">NEW  RECOVERED</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">892</span>
+                                            </div>
+                                        </div>
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">% FATALITY</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">0%</span>
+                                            </div>
+                                        </div>
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">TOTAL CASES</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">36517</span>
+                                            </div>
+                                        </div>
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">TOTAL DEATHS</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">36517</span>
+                                            </div>
+                                        </div>
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">TOTAL RECOVERED</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">36517</span>
+                                            </div>
+                                        </div>
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">% OF ALL US CASES</span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">1%</span>
+                                            </div>
+                                        </div>
+                                        <div class="covid-state-data">
+                                            <span class="dataLabel">HEIGHEST CASE IN <span id="heighestCasesState">NC</span></span>
+                                            <div class="stateCountRight">
+                                                <span class="dots-style"></span>
+                                                <span class="dataCount">Yancey</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="covid-togglePanel mBottomNone">
+                                <!-- Sidebar Filter Nav Start -->
+                                <div class="ela__sidebarAction">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <div class="covidFilterWrap">
+                                                <a href="javascript:void(0)" class="covid_cases_export_Option">
+                                                    <img src="assets/images/covid-tracker/export.png" /></a>
+                                                </a>
+                                                <div class="covid-ShowFilter-Wrap covid-ExportPopup covid-cases-ExportShow" style="display: none;">
+                                                    <input type="button" value="Export as CSV" id="exportStateDataCsv">
+                                                    <input type="button" value="Export as Image" id="exportStateDataImage">
+                                                    <span class="close-icon">
+                                                        <input type="button" value="X" class="crossBtn covid_cases_export_Option">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            
+                                        <li class="filter_nav">
+                                          <div class="covidFilterWrap">
+                                            <a href="javascript:void(0)" class="fullScreenCases">
+                                                <i class="fa fa-expand" style="width: 10px; height: 10px; color: white; margin: 5px; font-size: initial;" id="fullScreenChart" onclick="openFullscreen();"></i>
+                                            </a>
+                                        </div>
+                                        </li>
+                                    </ul>
+                                </div> 
+                                <!-- Sidebar Filter Nav End -->
+                                <div class="covid-toggleHead">
+                                    CASES BY COUNTY
+                                </div>
+                                <div class="covid-toggleContent" id="casesFullScreen">
+                                    <div class="covid-casesChart">
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Abbeville</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 25%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Acadia</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 20%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Accomack</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 5%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Ada</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 10%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Adair</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 18%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Adams</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 11%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Aiken</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 17%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Abbeville</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 25%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Acadia</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 20%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Accomack</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 5%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Ada</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 10%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Adair</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 18%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Adams</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 11%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Aiken</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 17%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Abbeville</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 25%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Acadia</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 20%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Accomack</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 5%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Ada</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 10%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Adair</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 18%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Adams</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 11%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Aiken</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 17%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Abbeville</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 25%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Acadia</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 20%;"></span>
+                                            </span>
+                                        </div>
+                                        <div class="covidChartItem">
+                                            <span class="stateLabel">Accomack</span>
+                                            <span class="stateGraph">
+                                                <span class="fillChart" style="width: 5%;"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ADD ENTITY form container end -->
+                </div>
+            </div>
+        </div>
+        <!-- COVID 19 TRACKER HTML End -->
+
         
         
         <!-- Main Wrapper Background Start -->    
@@ -2339,8 +3531,8 @@
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/slick.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.nestable.js"></script>
-
         <script type="text/javascript" src="assets/js/treeview.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.steps.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>

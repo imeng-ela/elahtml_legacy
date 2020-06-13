@@ -225,3 +225,139 @@ $( function() {
     $( ".showPopupViewDesign" ).draggable({ handle: "div.header" });
     $( "div.showPopupViewDesign" ).draggable({ containment: 'window' });
 });
+
+
+
+/* Draggable Scripts Popup */
+$( function() {
+    $( "#ela_covid_tracker_wrap" ).draggable({ handle: "div.sideNav-covid-head" });
+    $( "div.ela__covid_tracker_flyout" ).draggable({ containment: 'window' });
+} );
+
+jQuery(document).ready(function(){
+    
+    jQuery(".ela__covid_tracker_panel").hide();
+    //jQuery("#panel_casemanager").show();
+    jQuery(".ela__sideNav_nav_flyout").hide();
+    var wrapperHeight = jQuery( window ).innerHeight()
+    jQuery(".ela__covid_tracker_flyout").css('min-height',wrapperHeight);
+    jQuery(".ela__covid_tracker_panel").css('min-height',wrapperHeight);
+    
+    jQuery(".ela__actionPanel li a").on('click',function(e){
+        e.preventDefault();
+        jQuery(".ela__actionPanel li").removeClass('active');
+        jQuery(this).parent().addClass('active');
+        jQuery(".ela__covid_tracker_flyout").show();
+        var ids = jQuery(this).attr('class');
+        jQuery(".ela__covid_tracker_panel").hide();
+        jQuery("#"+ids).show();
+    })
+    jQuery(".closeBtn").on('click',function(e){
+        e.preventDefault();
+        jQuery(".ela__covid_tracker_flyout").hide();
+    })
+
+});
+
+
+$( ".covid-toggleHead" ).click(function() {
+   $(this).parent().find( ".covid-toggleContent" ).slideToggle();
+   $(this).parent().toggleClass('showhideFilter');
+   $(this).toggleClass('collapeHead');
+});
+
+
+$('.trackerToggleNav').on('click', function(){
+    $('.covid-toggleContent').toggleClass('extandHeight');
+});
+
+
+
+$(document).ready(function() {
+    $(".covid_export_Option").click(function() {
+        $(".covid-ExportShow").toggle();
+    });
+
+    $(".covid_filter_Option").click(function() {
+        $(".covid-FilterShow").toggle();
+    });
+
+    $(".covid_cases_export_Option").click(function() {
+        $(".covid-cases-ExportShow").toggle();
+    });
+    
+    $(".covid_cases_filter_Option").click(function() {
+        $(".covid-cases-FilterShow").toggle();
+    });
+});
+
+
+$(document).ready(function(){
+    
+    $(".fullScreenCases").click(function(){
+        $("#casesFullScreen").addClass("casesFullDiv");
+    });
+    
+});
+
+
+var elem = document.getElementById("casesFullScreen");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  } 
+}
+
+if (document.addEventListener) {
+ document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
+
+function exitHandler() {
+ if ((!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)) {
+    $("#casesFullScreen").removeClass("casesFullDiv");
+  // Run code on exit
+ }
+}
+
+
+/**********************************************
+        Debriefing Form All Scripts Here
+***********************************************/
+
+$(function (){
+    $("#ela_deb_form_wizard").steps({
+        headerTag: ".stepDivHead",
+        bodyTag: ".ela_debFormStep_Container",
+        transitionEffect: "fade"
+    });
+    
+});
+$(document).on('click',".btncls",function(){
+    var ids = $(this).attr('data-title');
+    
+    $(this).siblings().removeClass('active');   
+    $(this).addClass('active');
+    if($(this).val() == 'Yes') {
+        
+        $("#"+ids).show();
+    }else {
+        $("#"+ids).hide();
+    }  
+    
+    
+});
+
+function ShowHideDiv(btnPassport) {
+    
+    var dvPassport = document.getElementById("CI_ShowHide_1");
+    dvPassport.style.display = btnPassport.value == "Yes" ? "block" : "none";
+}

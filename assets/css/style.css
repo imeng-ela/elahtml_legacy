@@ -67,7 +67,7 @@ div img { max-width: 100%; }
 .ela__sidebarNav_wrap .ela__sideNav_nav_flyout .sideNav-head:hover { cursor: move; }
 .ela__sidebarNav_wrap .ela__sideNav_nav_flyout .sideNav-head .tab-headLogo { position: absolute; left: 0; top: 5px; }
 .ela__sidebarNav_wrap .ela__sideNav_nav_flyout .sideNav-head .tab-headLogo img { max-height:40px;  }
-.ela__sidebarNav_wrap .ela__sideNav_nav_flyout .sideNav-head h2 { color: #FFF; font-weight: 400; margin-top: 0px; padding-left: 80px; padding-right: 80px; float: left; text-transform: uppercase; font-size: 28px; }
+.ela__sidebarNav_wrap .ela__sideNav_nav_flyout .sideNav-head h2 { color: #FFF; font-weight: 400; margin-top: 0px; padding-left: 0px; padding-right: 80px; float: left; text-transform: uppercase; font-size: 28px; }
 .ela__sideNav_nav_flyout:before { content: ''; height: 4px; background-color: rgb(215, 215, 215,.40); width: 100%; position: absolute; top: 54px; left: 0;}
 
 
